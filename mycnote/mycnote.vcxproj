@@ -152,6 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="f1.c" />
     <ClCompile Include="mycnote.cpp" />
   </ItemGroup>
   <ItemGroup>
