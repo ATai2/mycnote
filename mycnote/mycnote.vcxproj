@@ -152,6 +152,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\32_64\32_64\指针.c" />
+    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\数组的查找\数组的查找\数组的查找.c" />
     <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\QQ.c" />
     <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\同步与异步.c" />
     <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\递归.c" />

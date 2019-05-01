@@ -27,6 +27,12 @@
     <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\递归.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\数组的查找\数组的查找\数组的查找.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\32_64\32_64\指针.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

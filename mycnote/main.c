@@ -2,6 +2,8 @@
 #include<stdlib.h>
 #include<Windows.h>
 
+void mainQQ();
+
 void openNotepad() {
 	system("\"C:\\Program Files\\Notepad++\\notepad++.exe\"");
 }
@@ -17,11 +19,12 @@ void test() {
 }
 
 int main() {
-	printf("helloworld");
+	/*printf("helloworld");
 	openNotepad();
 
 	Sleep(5000);
 	closeNotePad();
-	test();
+	test();*/
+	mainQQ();
 	return 0;
 }
