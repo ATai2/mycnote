@@ -1,0 +1,69 @@
+﻿// MFCAppHandlers.idl: MFCAppHandlers 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 生成类型库(MFCAppHandlers.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(1e02c204-0242-4d11-bf7b-1b17e28004b6),
+	pointer_default(unique)
+]
+interface IPreview : IUnknown
+{
+};
+
+[
+	object,
+	uuid(1fbb6dd3-af99-416a-a3ce-7d4964e8c71b),
+	pointer_default(unique)
+]
+interface IThumbnail : IUnknown
+{
+};
+
+[
+	object,
+	uuid(b109010e-e43f-4077-8512-792eba4bc8af),
+	pointer_default(unique)
+]
+interface ISearch : IUnknown
+{
+};
+
+[
+	uuid(a68ddfd6-53fb-4489-9080-2c4bddf36aff),
+	version(1.0),
+]
+library MFCAppHandlersLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(a4e011c1-d693-4acb-b7d1-b392e893f912)
+	]
+	coclass Preview
+	{
+		[default] interface IPreviewHandler;
+	};
+	[
+		uuid(61dac7be-ae37-4426-878a-d9e83477f4c2)
+	]
+	coclass Thumbnail
+	{
+		[default] interface IThumbnailProvider;
+	};
+	[
+		uuid(89de43f3-281f-4bc6-a9c5-095b4d7a7e05)
+	]
+	coclass Search
+	{
+		[default] interface IFilter;
+	};
+};
+
+import "shobjidl.idl";
+import "thumbcache.idl";
+import "filter.idl";
