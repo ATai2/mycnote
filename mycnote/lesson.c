@@ -8,70 +8,71 @@
 
 
 #pragma region hijack api
-#include"detours.h"
-
-#pragma comment(lib,"detours.lib")
-
-static int (WINAPI* OldMessageBoxW)(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType) = MessageBoxW;
-int
-WINAPI
-NewMessageBoxW(
-	HWND hWnd,
-	LPCWSTR lpText,
-	LPCWSTR lpCaption,
-	UINT uType) {
-	printf("call once.\n");
-	return 0;
-}
-
-
-//开始拦截
-void Hook()
-{
-	DetourRestoreAfterWith();//恢复原来状态,
-	DetourTransactionBegin();//拦截开始
-	DetourUpdateThread(GetCurrentThread());//刷新当前线程
-	//这里可以连续多次调用DetourAttach，表明HOOK多个函数
-	DetourAttach((void**)& OldMessageBoxW, NewMessageBoxW);//实现函数拦截
-	DetourTransactionCommit();//拦截生效
-}
-//取消拦截
-void UnHook()
-{
-	DetourTransactionBegin();//拦截开始
-	DetourUpdateThread(GetCurrentThread());//刷新当前线程
-	//这里可以连续多次调用DetourDetach,表明撤销多个函数HOOK
-	DetourDetach((void**)& OldMessageBoxW, NewMessageBoxW); //撤销拦截函数
-	DetourTransactionCommit();//拦截生效
-}
-// detours hijack funcitons
-void testDetours() {
-
-	MessageBoxW(0, L"啊啊啊啊", L"顶顶顶顶顶", 0);
-	Hook();
-	MessageBoxW(0, L"啊啊啊啊2", L"顶顶顶顶顶2", 0);
-	//system("pause");
-	//system("calc");
-	//printf("%p,%p,%p", system, newsystem, oldsystem);
-	//Hook();
-	//printf("\n%p,%p,%p", system, newsystem, oldsystem);
-	//system("calc");
-	getchar();
-}
-
-
-void mainHijack()
-{
-	//system("calc");
-	//ShellExecuteA(0, "open", "calc", 0, 0, 1);
-	STARTUPINFO si = { sizeof(si) }; //启动信息
-	PROCESS_INFORMATION pi;//保存了进程的信息
-	si.dwFlags = STARTF_USESHOWWINDOW; //表示显示窗口
-	si.wShowWindow = 1; //1表示显示创建的进程的窗口 
-	wchar_t cmdline[] = L"c://program files//internet explorer//iexplore.exe";
-	CreateProcessW(NULL, cmdline, NULL, NULL, 0, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi);//创建进程
-
-}
+//
+//#include"detours.h"
+//
+//#pragma comment(lib,"detours.lib")
+//
+//static int (WINAPI* OldMessageBoxW)(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType) = MessageBoxW;
+//int
+//WINAPI
+//NewMessageBoxW(
+//	HWND hWnd,
+//	LPCWSTR lpText,
+//	LPCWSTR lpCaption,
+//	UINT uType) {
+//	printf("call once.\n");
+//	return 0;
+//}
+//
+//
+////开始拦截
+//void Hook()
+//{
+//	DetourRestoreAfterWith();//恢复原来状态,
+//	DetourTransactionBegin();//拦截开始
+//	DetourUpdateThread(GetCurrentThread());//刷新当前线程
+//	//这里可以连续多次调用DetourAttach，表明HOOK多个函数
+//	DetourAttach((void**)& OldMessageBoxW, NewMessageBoxW);//实现函数拦截
+//	DetourTransactionCommit();//拦截生效
+//}
+////取消拦截
+//void UnHook()
+//{
+//	DetourTransactionBegin();//拦截开始
+//	DetourUpdateThread(GetCurrentThread());//刷新当前线程
+//	//这里可以连续多次调用DetourDetach,表明撤销多个函数HOOK
+//	DetourDetach((void**)& OldMessageBoxW, NewMessageBoxW); //撤销拦截函数
+//	DetourTransactionCommit();//拦截生效
+//}
+//// detours hijack funcitons
+//void testDetours() {
+//
+//	MessageBoxW(0, L"啊啊啊啊", L"顶顶顶顶顶", 0);
+//	Hook();
+//	MessageBoxW(0, L"啊啊啊啊2", L"顶顶顶顶顶2", 0);
+//	//system("pause");
+//	//system("calc");
+//	//printf("%p,%p,%p", system, newsystem, oldsystem);
+//	//Hook();
+//	//printf("\n%p,%p,%p", system, newsystem, oldsystem);
+//	//system("calc");
+//	getchar();
+//}
+//
+//
+//void mainHijack()
+//{
+//	//system("calc");
+//	//ShellExecuteA(0, "open", "calc", 0, 0, 1);
+//	STARTUPINFO si = { sizeof(si) }; //启动信息
+//	PROCESS_INFORMATION pi;//保存了进程的信息
+//	si.dwFlags = STARTF_USESHOWWINDOW; //表示显示窗口
+//	si.wShowWindow = 1; //1表示显示创建的进程的窗口 
+//	wchar_t cmdline[] = L"c://program files//internet explorer//iexplore.exe";
+//	CreateProcessW(NULL, cmdline, NULL, NULL, 0, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi);//创建进程
+//
+//}
 #pragma endregion
 
 #pragma region   1 level pointer
@@ -351,8 +352,32 @@ void mainP14()
 
 #pragma region 2 lever pointer
 
+//改变一个变量，需要变量的地址，需要指针变量的地址 
+//double **p1 = &p;二级指针存储一级指针的地址
+double  db = 3.5;
+double  bd = 4.5;
+void change(double* p)//新建一个指针存储你传递的值
+{
 
+	p = &bd;
+	printf("\nchange=%p", &p);
+	printf("\nchange=%f", *p);
 
+}
 
+void  changep(double** pp)
+{
+	*pp = &bd;//改变指针
+}
+void main20()
+{
 
+	double* p = &db;
+	printf("\nmain=%p", &p);
+	printf("\n%f", *p);
+	//p = &bd;
+	changep(&p);
+	printf("\n%f", *p);
+	getchar();
+}
 #pragma endregion

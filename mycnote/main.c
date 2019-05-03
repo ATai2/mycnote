@@ -29,7 +29,8 @@ int main() {
 	test();*/
 	//mainQQ();
 	//mainSystem();
-	testDetours();
+	//testDetours();
 	//mainHookSys();
+	main20();
 	return 0;
 }
