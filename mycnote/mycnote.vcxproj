@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bigdatasearch.c" />
     <ClCompile Include="hooksystem.c" />
     <ClCompile Include="lesson.c" />
     <ClCompile Include="main.c" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClInclude Include="demo.h" />
     <ClInclude Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140725\detours\detours\detours.h" />
+    <ClInclude Include="find.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
