@@ -31,7 +31,7 @@ int main() {
 	//mainSystem();
 	//testDetours();
 	//mainHookSys();
-	main20();
+	main2levelStr();
 	return 0;
 }
 
