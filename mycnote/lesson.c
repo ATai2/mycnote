@@ -380,4 +380,102 @@ void main20()
 	printf("\n%f", *p);
 	getchar();
 }
+
+void  run(char *p[5]) //数组没有副本机制，传递是地址
+{
+	printf("\nrun=%d", sizeof(p));//4个字节
+	for (char **pp = p; pp < p + 5; pp++)
+	{
+		system(*pp);
+	}
+
+}
+void  run1(char **px) //数组没有副本机制，传递是地址
+{
+	printf("\nrun=%d", sizeof(px));//4个字节
+	for (char **pp = px; pp < px + 5; pp++)
+	{
+		system(*pp);
+	}
+
+}
+
+
+
+void main()
+{
+	char *p[5] = { "calc", "notepad", "mspaint", "tasklist &pause", "write" };
+	printf("\nmain=%d", sizeof(p));
+	run1(p);
+	getchar();
+
+
+}
+
+void mainx()
+{
+	char *p[5] = { "calc", "notepad", "mspaint", "tasklist &pause", "write" };
+	//for (int i = 0; i < 5; i++)
+	//{
+	//	system(p[i]);//下标的方式
+	//}
+	//for (int i = 0; i < 5; i++)
+	//{
+	//	system(*(p + i));下标
+	//}
+	//轮询一个数组，需要一个指针，轮询一个指针数组，需要一个二级指针
+	for (char **pp = p; pp < p + 5; pp++)
+	{
+		system(*pp);
+	}
+}
 #pragma endregion
+
+#pragma region 2 level string app pointer
+
+void  run(char* p[5]) //数组没有副本机制，传递是地址
+{
+	printf("\nrun=%d", sizeof(p));//4个字节
+	for (char** pp = p; pp < p + 5; pp++)
+	{
+		system(*pp);
+	}
+
+}
+void  run1(char** px) //数组没有副本机制，传递是地址
+{
+	printf("\nrun=%d", sizeof(px));//4个字节
+	for (char** pp = px; pp < px + 5; pp++)
+	{
+		system(*pp);
+	}
+
+}
+
+void main2levelStr()
+{
+	char* p[5] = { "calc", "notepad", "mspaint", "tasklist &pause", "write" };
+	printf("\nmain=%d", sizeof(p));
+	run1(p);
+	getchar();
+}
+
+void mainx()
+{
+	char* p[5] = { "calc", "notepad", "mspaint", "tasklist &pause", "write" };
+	//for (int i = 0; i < 5; i++)
+	//{
+	//	system(p[i]);//下标的方式
+	//}
+	//for (int i = 0; i < 5; i++)
+	//{
+	//	system(*(p + i));下标
+	//}
+	//轮询一个数组，需要一个指针，轮询一个指针数组，需要一个二级指针
+	for (char** pp = p; pp < p + 5; pp++)
+	{
+		system(*pp);
+	}
+}
+#pragma endregion
+
