@@ -34,3 +34,7 @@ int main() {
 	main20();
 	return 0;
 }
+
+void mainHookSys()
+{
+}
