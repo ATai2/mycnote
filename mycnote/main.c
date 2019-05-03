@@ -2,7 +2,9 @@
 #include<stdlib.h>
 #include<Windows.h>
 
-void mainQQ();
+//void mainQQ();
+//void mainSystem();
+void mainHookSys();
 
 void openNotepad() {
 	system("\"C:\\Program Files\\Notepad++\\notepad++.exe\"");
@@ -14,7 +16,7 @@ void closeNotePad() {
 
 }
 
-void test() {
+void testMain() {
 	ShellExecuteA(0,"open","calc",0,0,1);
 }
 
@@ -25,6 +27,9 @@ int main() {
 	Sleep(5000);
 	closeNotePad();
 	test();*/
-	mainQQ();
+	//mainQQ();
+	//mainSystem();
+	testDetours();
+	//mainHookSys();
 	return 0;
 }

@@ -18,19 +18,10 @@
     <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\同步与异步.c">
+    <ClCompile Include="lesson.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\QQ.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\递归.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\数组的查找\数组的查找\数组的查找.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\32_64\32_64\指针.c">
+    <ClCompile Include="hooksystem.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -42,6 +33,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140725\detours\detours\detours.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

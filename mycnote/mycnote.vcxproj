@@ -96,6 +96,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>detours.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -152,11 +153,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\32_64\32_64\指针.c" />
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\数组的查找\数组的查找\数组的查找.c" />
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\QQ.c" />
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\同步与异步.c" />
-    <ClCompile Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140723\调戏\调戏\递归.c" />
+    <ClCompile Include="hooksystem.c" />
+    <ClCompile Include="lesson.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="demo.h" />
+    <ClInclude Include="F:\BaiduYunDownload\传智播客第五期C++\01_C就业\20140725\detours\detours\detours.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
