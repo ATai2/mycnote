@@ -385,7 +385,7 @@ void main20()
 
 #pragma region 2 level string app pointer
 
-void  run(char* p[5]) //数组没有副本机制，传递是地址
+void  run(char* p[5]) //数组没有副本机制，传递是地址			
 {
 	printf("\nrun=%d", sizeof(p));//4个字节
 	for (char** pp = p; pp < p + 5; pp++)
@@ -394,7 +394,7 @@ void  run(char* p[5]) //数组没有副本机制，传递是地址
 	}
 
 }
-void  run1(char** px) //数组没有副本机制，传递是地址
+void  run1(char** px) //数组没有副本机制，传递是地址			字符串指针数组可以用二级指针取代。
 {
 	printf("\nrun=%d", sizeof(px));//4个字节
 	for (char** pp = px; pp < px + 5; pp++)
@@ -433,3 +433,116 @@ void mainx()
 }
 #pragma endregion
 
+
+#pragma region function pointer
+
+//void main1()
+//{
+//	time_t ts;
+//	unsigned int randdata = time(&ts);//获取当前时间转换为一个无符号数据
+//	srand(randdata);//随机数种子
+//	
+//	int a[10] = { 0 };
+//	int *p[10];
+//	for (int i = 0; i < 10; i++)
+//	{
+//		p[i] = &a[i];//指针对应了数组每一个元素的地址
+//	}
+//	while (1)
+//	{
+//		for (int i = 0; i < 10; i++)
+//		{
+//			a[i] = rand() % 1000;//取随机数
+//			printf("\n%d", a[i]);//打印数组每一个元素
+//		}
+//		Sleep(5000);
+//		printf("\n");
+//		for (int i = 0; i < 10; i++)
+//		{
+//			if (*p[i] <= 500)
+//			{
+//				*p[i] += 100;//加血
+//			}
+//			printf("\n%d", *p[i]);
+//		}
+//		Sleep(5000);
+//
+//		 
+//
+//	}
+//
+//
+//
+//
+//
+//
+//}
+//
+//void main2()
+//{
+//	char * p[] = { "calc", "notepad", "mspaint", "write", "tasklist & pause" };
+//	int n = sizeof(p) / sizeof(char *);
+//	for (int i = 0; i < n; i++)
+//	{
+//		printf("\n%s",p[i]);
+//		system(p[i]);
+//
+//	}
+//
+//
+//
+//}
+//
+//
+//static int jia(int a, int b) //限定只有本文件使用
+//{
+//	return a + b;
+//}
+//static  int jian(int a, int b)
+//{
+//	return a - b;
+//}
+//static int cheng(int a, int b)
+//{
+//	return a * b;
+//}
+//static  int chu(int a, int b)
+//{
+//	return a / b;
+//}
+//
+//void main3()
+//{
+//	int (*p)(int a, int b)=jia;//存储函数指针的地址
+//	//jia = jia;函数名是常量指针
+//	printf("%d", p(1, 2));
+//	p = jian;
+//	printf("\n%d", p(1, 2));
+//
+//
+//	getchar();
+//}
+//
+//void main4()
+//{
+//	//int* a;
+//	//int* a[10];
+//	int(*p[4])(int a, int b) = { jia, jian, cheng, chu };
+//	for (int i = 0; i < 4; i++)
+//	{
+//		printf("\n%d", p[i](10, 2));
+//	}
+//
+//	getchar();
+//}
+
+#pragma endregion
+
+#pragma region  multiproccess
+
+
+
+
+
+
+#pragma endregion
