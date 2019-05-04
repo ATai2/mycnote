@@ -24,6 +24,9 @@
     <ClInclude Include="arraydemo.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="utils.cpp">
@@ -33,6 +36,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="arraydemo.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CString.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -585,3 +585,12 @@ void mainCalloc()
 
 
 #pragma endregion
+
+
+#pragma region  struct
+
+
+
+
+
+#pragma endregion
