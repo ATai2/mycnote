@@ -5,8 +5,6 @@
 #include<string.h>
 
 
-
-
 #pragma region hijack api
 //
 //#include"detours.h"

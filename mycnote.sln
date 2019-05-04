@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppIDE", "CppIDE\CppIDE.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppIDEHandlers", "CppIDEHandlers\CppIDEHandlers.vcxproj", "{B3FE4805-1F96-4A67-9AD9-928EE9486D0C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utils", "utils\utils.vcxproj", "{12EB3FD1-2AAA-491F-9908-F48125FA7C6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{B3FE4805-1F96-4A67-9AD9-928EE9486D0C}.Release|x64.Build.0 = Release|x64
 		{B3FE4805-1F96-4A67-9AD9-928EE9486D0C}.Release|x86.ActiveCfg = Release|Win32
 		{B3FE4805-1F96-4A67-9AD9-928EE9486D0C}.Release|x86.Build.0 = Release|Win32
+		{12EB3FD1-2AAA-491F-9908-F48125FA7C6F}.Debug|x64.ActiveCfg = Debug|x64
+		{12EB3FD1-2AAA-491F-9908-F48125FA7C6F}.Debug|x64.Build.0 = Debug|x64
+		{12EB3FD1-2AAA-491F-9908-F48125FA7C6F}.Debug|x86.ActiveCfg = Debug|Win32
+		{12EB3FD1-2AAA-491F-9908-F48125FA7C6F}.Debug|x86.Build.0 = Debug|Win32
+		{12EB3FD1-2AAA-491F-9908-F48125FA7C6F}.Release|x64.ActiveCfg = Release|x64
+		{12EB3FD1-2AAA-491F-9908-F48125FA7C6F}.Release|x64.Build.0 = Release|x64
+		{12EB3FD1-2AAA-491F-9908-F48125FA7C6F}.Release|x86.ActiveCfg = Release|Win32
+		{12EB3FD1-2AAA-491F-9908-F48125FA7C6F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
