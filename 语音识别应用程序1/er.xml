@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GRAMMAR LANGID="804">
+  <DEFINE>
+    <ID NAME="CMD" VAL="10"/>
+    </DEFINE>
+  <RULE NAME="COMMAND" ID="CMD" TOPLEVEL="ACTIVE">
+    <L>
+      <P>资源管理器</P>
+      <P>打开企鹅</P>
+      <P>关闭企鹅</P>
+      <P>关机</P>
+      <P>重启</P>
+      <P>记事本</P>
+      <P>计算器</P>
+      <P>画图板</P>
+     <P>谭胜</P>
+      </L>
+    </RULE>
+  </GRAMMAR>

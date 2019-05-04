@@ -568,3 +568,20 @@ void mainCalloc()
 	system("pause");
 }
 #pragma endregion
+
+#pragma region const
+
+//int  *p
+
+//const int *p   限定只能读不可以改，地址可以移动，可以看别人账户
+//int const *p
+
+//int * const p  限定不可以查看别人的账户，对自己账户可读可写
+
+//const int * const p 限定只能看自己账户，只能读不可写
+//int const * const p 
+
+
+
+
+#pragma endregion
