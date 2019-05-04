@@ -546,3 +546,27 @@ void mainx()
 
 
 #pragma endregion
+
+
+#pragma region calloc
+
+void mainCalloc()
+{
+	int* p = (int*)calloc(10, sizeof(int));//分配内存
+	printf("%p\n", p);//输出地址
+
+	for (int i = 0; i < 10; i++)
+	{
+		*(p + i) = i;//*(p+i)等价于p[i]
+	}
+	int* pnew = (int*)realloc(p, 100000);//变长
+	//realloc.第一种情况，后面的内存没人用，就直接拓展变长
+	//第二种情况，后面的内存有人用，先分配新的长度，拷贝原来的内存，释放的原来的内存
+	printf("%p", pnew);
+	for (int i = 10; i < 25000; i++)
+	{
+		*(pnew + i) = i;
+	}
+	system("pause");
+}
+#pragma endregion

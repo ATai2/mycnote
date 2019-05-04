@@ -9,14 +9,12 @@
 #include <process.h>
 #include "find.h"
 
-
 //----------------------------------------主函数开始------------------------------------------------
-
-
 int mainBigSearch()
 {
 	//----------------------------------------读取文件------------------------------------------------
-	FILE* fp = fopen("dangdangwang.txt", "r");
+	FILE* fp = fopen("res.txt", "r");
+	FILE* resFile = fopen("result.txt", "w");
 	if (!fp) {
 		puts("文件打开失败，按任意键退出程序...");
 		getchar();
@@ -34,7 +32,7 @@ int mainBigSearch()
 		//判断申请成功否
 		if (!ft[i]) {
 			puts("申请内存失败，按任意键退出程序...");
-			getchar();
+			//getchar();
 			return -1;	//main退出
 		}
 
@@ -102,7 +100,6 @@ int mainBigSearch()
 		puts("请输入要查找的关键字：");
 		scanf("%s", m);
 		starttime = GetTickCount();
-
 		//初始化线程参数，开启多线程查找
 		for (int i = 0; i < 6; ++i) {
 			res[i] = 0;	//必须初始化为0，不然会影响下一次读取
@@ -111,7 +108,6 @@ int mainBigSearch()
 		}
 		//--------------------------------判断查找结果-----------------------------------------------
 		int finish = 0;		//判断是否完成搜索
-
 		while (1) {
 			Sleep(10);		//每10ms检测一次
 			//先加起来，看是否都结束了查找
@@ -139,9 +135,7 @@ int mainBigSearch()
 				endtime = GetTickCount();	//获取查找结束时间
 				break;	//所有线程都结束了
 			}//end if
-
 		}//end 线程结束检查
-
 		//输出消耗时间
 		printf("\n\n消耗时间=%d\n\n", endtime - starttime);
 		//所以线程都搞完了，且有搜到的时候,输出结果
@@ -156,7 +150,6 @@ int mainBigSearch()
 		if (whether == 0) {
 			break;
 		}
-
 	}// end while(1)
 //-------------------------------结束前释放内存--------------------------------------------
 	getchar();
