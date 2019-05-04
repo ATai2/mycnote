@@ -354,7 +354,7 @@ void mainP14()
 //double **p1 = &p;二级指针存储一级指针的地址
 double  db = 3.5;
 double  bd = 4.5;
-void change(double* p)//新建一个指针存储你传递的值
+void changeP(double* p)//新建一个指针存储你传递的值
 {
 
 	p = &bd;

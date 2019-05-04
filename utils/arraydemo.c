@@ -1,8 +1,7 @@
 #include"arraydemo.h"
-
+#include "pch.h"
 void init(struct data* pdata) //使用之前初始化
 {
-
 	pdata->p = NULL;//意味着还没有初始化
 	pdata->length = 0;//长度为0；
 	pdata->stat = 0;//代表无序
@@ -49,12 +48,8 @@ void  addobject(struct data* pdata, int num)
 		{
 			pdata->length += 1;//数组标识增加一个元素
 			pdata->p[pdata->length - 1] = num;//赋值
-
 		}
-
-
 	}
-
 }
 //增加一个数组
 void  addobjects(struct data* pdata, int* pnum, int n) //数组作为参数退化为指针
@@ -73,15 +68,11 @@ void  addobjects(struct data* pdata, int* pnum, int n) //数组作为参数退化为指针
 	{
 		if (pdata->length + n <= pdata->reallength)
 		{
-
 			for (int i = 0; i < n; i++)
 			{
 				pdata->p[i + pdata->length] = pnum[i];//拷贝数组
 			}
 			pdata->length += n;//数组标识增加n个元素
-
-
-
 		}
 		else
 		{
@@ -93,18 +84,13 @@ void  addobjects(struct data* pdata, int* pnum, int n) //数组作为参数退化为指针
 			}
 			pdata->length += n;//数组标识增加n个元素
 			pdata->reallength += n;//增加长度
-
 		}
-
-
 	}
-
 }
 
 
 void  printfall(struct data* pdata) //打印所有的数组
 {
-
 	for (int i = 0; i < pdata->length; i++)
 	{
 		printf("%d\n", pdata->p[i]);//输出一个数组
@@ -114,7 +100,6 @@ void  sort(struct data* pdata, int obj)//obj=0,从小大到，否则从da到小
 {
 	if (obj == 0)
 	{
-
 		for (int i = 0; i < pdata->length - 1; i++)
 		{
 			for (int j = 0; j < pdata->length - i - 1; j++)
@@ -124,12 +109,10 @@ void  sort(struct data* pdata, int obj)//obj=0,从小大到，否则从da到小
 					int temp = pdata->p[j]; //交换数据
 					pdata->p[j] = pdata->p[j + 1];
 					pdata->p[j + 1] = temp;
-
 				}
 			}
 		}
 		pdata->stat = 1;//代表从小到大
-
 	}
 	else
 	{
@@ -153,25 +136,12 @@ void  sort(struct data* pdata, int obj)//obj=0,从小大到，否则从da到小
 					// p[j]   0010
 					//p[j + 1]0011
 					//        0001  a=a^b,b=a^b.a=a^b;
-
-
 				}
 			}
 		}
 		pdata->stat = 2;//代表从大到小
 	}
-
-
-
-
-
-
-
-
-
-
 }
-
 
 
 int* finddata(struct data* pdata, int num)
@@ -196,7 +166,6 @@ int* finddata(struct data* pdata, int num)
 		int xia = pdata->length - 1;//下
 		while (shang <= xia)//循环终止条件, 
 		{
-
 			int zhong = (shang + xia) / 2;
 			printf("%d,%d,%d\n", shang, zhong, xia);
 			if (pdata->p[zhong] == num)
@@ -210,14 +179,9 @@ int* finddata(struct data* pdata, int num)
 			else if (pdata->p[zhong] < num)
 			{
 				shang = zhong + 1;
-
-
 			}
 		}
 		return NULL;
-
-
-
 	}
 	else
 	{
@@ -244,16 +208,8 @@ int* finddata(struct data* pdata, int num)
 				xia = zhong - 1;
 
 			}
-
-
-
 		}
-
-
 		return NULL;
-
-
-
 	}
 
 
@@ -298,8 +254,6 @@ void  insert(struct data* pdata, int num, int insertnum, int headback)//数据插入
 				}
 				pdata->p[curr] = insertnum;//实现插入，前面插入
 				pdata->length++;//长度加1
-
-
 			}
 			else
 			{
@@ -312,11 +266,7 @@ void  insert(struct data* pdata, int num, int insertnum, int headback)//数据插入
 				}
 				pdata->p[curr] = insertnum;//实现插入，前面插入
 				pdata->length++;//长度加1
-
 			}
-
-
-
 		}
 		else
 		{
@@ -331,7 +281,6 @@ void  insert(struct data* pdata, int num, int insertnum, int headback)//数据插入
 				}
 				pdata->p[curr + 1] = insertnum;//实现插入，hou插入
 				pdata->length++;//长度加1
-
 			}
 			else
 			{
@@ -345,22 +294,9 @@ void  insert(struct data* pdata, int num, int insertnum, int headback)//数据插入
 				}
 				pdata->p[curr + 1] = insertnum;//实现插入，hou插入
 				pdata->length++;//长度加1
-
-
-
-
 			}
-
 		}
-
 	}
-
-
-
-
-
-
-
 }
 
 //删除
@@ -374,7 +310,6 @@ void  deleteone(struct data* pdata, int num)
 	}
 	else
 	{
-
 		int  curr = p - pdata->p;//cur就是要删除的下标
 		//printf("\n%d,%p", *p, p);
 		//printf("\n%d,%p", pdata->p[curr], &pdata->p[curr]);//输出数据
@@ -383,14 +318,7 @@ void  deleteone(struct data* pdata, int num)
 			pdata->p[i] = pdata->p[i + 1];//从后向前移动
 		}
 		pdata->length -= 1;//数组元素减去1
-
-
-
 	}
-
-
-
-
 }
 
 //删除全部
@@ -406,15 +334,7 @@ void  deleteall(struct data* pdata, int num) //删除所有能找到的数据
 			pdata->p[i] = pdata->p[i + 1];//从后向前移动
 		}
 		pdata->length -= 1;//数组元素减去1
-
 	}
-
-
-
-
-
-
-
 }
 int* find(int* p, int num, int n)//从一个地址开始，N个范围之内找到
 {
@@ -428,10 +348,7 @@ int* find(int* p, int num, int n)//从一个地址开始，N个范围之内找到
 		}
 	}
 	return NULL;//代表没有找到
-
 }
-
-
 
 struct findres findadlldata(struct data* pdata, int num)
 {
@@ -451,5 +368,8 @@ struct findres findadlldata(struct data* pdata, int num)
 		//printf("\n%p,%d\n", pint[j], *pint[j]);
 	}
 	return res1;
+}
 
+void testUtils() {
+	printf("test just test");
 }
