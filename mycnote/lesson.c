@@ -594,3 +594,63 @@ void mainCalloc()
 
 
 #pragma endregion
+
+
+#pragma region file
+
+int getFileSize(char* path) {
+	FILE* pf = fopen(path, "r");
+	if (pf==NULL)
+	{
+		return -1;
+	}
+
+	fseek(pf, 0, SEEK_END);
+	int length = ftell(pf);
+	return length;//获取文件大小
+}
+
+void testFile() {
+	char* path = "";
+}
+
+#pragma endregion
+
+#pragma region dll
+
+
+typedef void  (*pmsg)();//简化函数指针
+typedef int(*padd)(int a, int b);//简化函数指针
+
+void mainDll()
+{
+	HMODULE mydll = LoadLibraryA("动态库.dll");
+	if (mydll == NULL)
+	{
+		printf("动态库加载失败");
+	}
+	else
+	{
+		pmsg pmsg1;//定义一个函数指针
+		pmsg1 = (pmsg)GetProcAddress(mydll, "msg");//获取函数地址
+		if (pmsg1 != NULL)
+		{
+			pmsg1();//执行
+		}
+		padd padd1;//定义函数指针
+		padd1 = (padd)GetProcAddress(mydll, "add");
+		if (padd1 != NULL)
+		{
+			printf("\n%d", padd1(10, 29));
+		}
+
+
+	}
+
+	FreeLibrary(mydll);
+
+	system("pause");
+
+}
+
+#pragma endregion

@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bigdatasearch.c" />
+    <ClCompile Include="cgihello.c" />
     <ClCompile Include="hooksystem.c" />
     <ClCompile Include="lesson.c" />
     <ClCompile Include="main.c" />
