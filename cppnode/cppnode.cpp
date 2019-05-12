@@ -22,7 +22,7 @@ public:
 
 int main()
 {
-	int* p = new int[10];
+	/*int* p = new int[10];
 	for (int i = 0; i < 10; i++)
 	{
 		p[i] = i;
@@ -31,7 +31,8 @@ int main()
 	for (int i = 0; i < 10; i++)
 	{
 		cout << p[i] << endl;
-	}
+	}*/
+	
 
     std::cout << "Hello World!\n"; 
 }

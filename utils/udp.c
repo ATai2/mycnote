@@ -4,6 +4,7 @@
 //#pragma comment(lib, "ws2_32.lib")
 
 #include<WinSock2.h>
+#include "udp.h"
 
 int socket_send(int port,char *addrStr)
 {
@@ -13,7 +14,7 @@ int socket_send(int port,char *addrStr)
 	ver = MAKEWORD(1, 1);//  用什么版本的socket
 	//wsaData = ;
 
-	WSAStartup(ver,&wsaData);
+	int res=WSAStartup(ver,&wsaData);
 	// AF_INET  TCP/IP protocal
 	// SOCK_DGRAM   UDP
 
@@ -26,6 +27,8 @@ int socket_send(int port,char *addrStr)
 
 	addr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
 	
-
-
+	char buf[1024] = { 0 };
+	strcpy(buf, "hello world");
+	sendto(st, buf, strlen(buf), 0, (struct sockaddr*) & addr,sizeof(addr));
+	return 0;
 }
