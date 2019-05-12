@@ -3,10 +3,22 @@
 
 #include <iostream>
 using namespace std;
+
 // 内联函数， 函数代码量少的情况
 inline int mymax(int a, int b) {
 	return a > b ? a : b;
 }
+
+class man {
+private:
+	string name;
+	int age;
+
+public:
+
+
+};
+
 
 int main()
 {
