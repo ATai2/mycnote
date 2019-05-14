@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include "udp.h"
+
 using namespace std;
 
 // 内联函数， 函数代码量少的情况
@@ -32,7 +34,10 @@ int main()
 	{
 		cout << p[i] << endl;
 	}*/
-	
+	char str[] = { "lsdjflwefjo" };
+	char* p;
+	p = str;
+	socket_send(8080,p);
 
     std::cout << "Hello World!\n"; 
 }

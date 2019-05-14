@@ -18,5 +18,16 @@
     <ClCompile Include="cppnode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="udp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="learn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="udp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

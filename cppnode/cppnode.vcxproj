@@ -152,6 +152,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cppnode.cpp" />
+    <ClCompile Include="learn.cpp" />
+    <ClCompile Include="udp.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="udp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,7 @@
+#define _WINSOCK_DEPRECATED_NO_WARNINGS  
 #include "udp.h"
+
+
 
 int socket_send(int port,char *addrStr)
 {
@@ -19,10 +22,10 @@ int socket_send(int port,char *addrStr)
 	addr.sin_family = AF_INET;
 	addr.sin_port = htons(port);  //  主机上大于1个字节的，转化成网络字节流
 
-	addr.sin_addr.S_un.S_addr = inet_pton("127.0.0.1");
+	addr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
 	
 	char buf[1024] = { 0 };
-	strcpy_s(buf,20, "hello world");
+	strcpy_s(buf,20, addrStr);
 	sendto(st, buf, strlen(buf), 0, (struct sockaddr*) & addr,sizeof(addr));
 
 	closesocket(st);

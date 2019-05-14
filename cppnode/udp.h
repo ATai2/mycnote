@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//#pragma comment(lib, "ws2_32.lib")
+#pragma comment(lib, "ws2_32.lib")
 
 #include<WinSock2.h>
 //#ifndef  UDP_H
