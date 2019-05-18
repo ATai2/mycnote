@@ -355,13 +355,13 @@ struct myclass :public  bigdatacom //继承
 #pragma region kuangzifu
 void mainWchar()
 {
-	setlocale(LC_ALL, "chs");//设置本地化
-	wchar_t* p1 = L"123456123123qweqeqe";
-	std::wcout << p1 << std::endl;
-	wchar_t* p2 = L"北京123456";
-	std::wcout << p2 << std::endl;
+	//setlocale(LC_ALL, "chs");//设置本地化
+	//wchar_t* p1 = L"123456123123qweqeqe";
+	//std::wcout << p1 << std::endl;
+	//wchar_t* p2 = L"北京123456";
+	//std::wcout << p2 << std::endl;
 
-	system("pause");
+	//system("pause");
 }
 #pragma endregion
 
