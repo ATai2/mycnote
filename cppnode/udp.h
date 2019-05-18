@@ -24,4 +24,7 @@ extern "C" {
 }
 #endif
 
+int sum();
+
+
 

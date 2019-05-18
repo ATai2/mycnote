@@ -438,13 +438,6 @@ void mainWchar()
 //
 //	change(p);
 //	std::cout << p(1, 2) << std::endl;
-//
-//	system("pause");
-//
-//
-//
-//
-//
 //}
 //
 //int(*& changep(int (*&rp)(int,int)))(int, int)
@@ -463,11 +456,6 @@ void mainWchar()
 //	std::cout << p(1, 2) << std::endl;
 //
 //	system("pause");
-//
-//
-//
-//
-//
 //}
 //
 //void main5()
@@ -477,12 +465,6 @@ void mainWchar()
 //	int *px[3] = { &a, &b, &c };
 //	//int && p [4] = {a,b,c };
 //	//引用数组是非法的
-//
-//
-//
-//
-//
-//
 //}
 //struct mystr 
 //{
@@ -557,11 +539,6 @@ void mainWchar()
 //	//pc[3] = 'y';
 //	//*(pc + 3) = 'y';
 //	pc = "world";
-//
-//
-//
-//
-//	system("pause");
 //}
 //
 //void main10()
@@ -571,13 +548,6 @@ void mainWchar()
 //	const char(&rrstr)[10](rstr);//引用可以给另一个引用初始化
 //	str[4] = 'X';
 //	//rstr[4] = 'Y';
-//
-//
-//
-//
-//
-//
-//
 //}
 //
 //void  main11()
@@ -587,10 +557,9 @@ void mainWchar()
 //	std::cout << p(1, 2) << std::endl;
 //	int(* const &rp)(int a, int b)(p);//引用函数指针
 //	//rp=jian;//（）仅仅适用于初始化
-//
-//
-//
 //}
 
-
+// std::move(a) ;    左值转换为右值
 #pragma endregion
+
+
