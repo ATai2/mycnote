@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "../cppnode/"
+//#include "../cppnode/learn.h"
 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -13,7 +13,7 @@ namespace UnitTest1
 		
 		TEST_METHOD(TestMethod1)
 		{
-			
+			Assert::AreEqual<int>(1, newAaaryTest());
 		}
 	};
 }

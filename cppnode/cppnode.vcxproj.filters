@@ -20,12 +20,18 @@
     <ClCompile Include="learn.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="learn2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="udp.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="learn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="learn2.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

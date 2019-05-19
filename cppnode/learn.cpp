@@ -4,6 +4,8 @@
 #include<cstdarg>
 // cstdarg 处理通用类型
 #include<locale>
+#include<array>
+#include "learn.h"
 
 #pragma region auto
 //自动变量，自动获取类型，输出，泛型
@@ -43,84 +45,84 @@ void mainAuto()
 
 #pragma region struct
 
-//除了数据还有函数
-struct bigdatacom
-{
-protected://内部私有
-	char dataa[100];
-	char datab[100];
-public://公有公开
-	void init(const char* str1, const char* str2)
-	{
-		std::cout << typeid(*this).name() << std::endl;;
-
-		//strcpy(this->dataa, str1);
-		//strcpy(this->datab, str2);
-	}
-	char* getbigdata()
-	{
-		int lengtha = strlen(dataa);
-		int lengthb = strlen(datab);
-		int* pres = (int*)malloc(sizeof(int) * (lengtha + lengthb));
-		memset(pres, 0, sizeof(int) * (lengtha + lengthb));//初始化
-		//累乘
-		for (int i = 0; i < lengtha; i++)
-		{
-			for (int j = 0; j < lengthb; j++)
-			{
-				pres[i + j + 1] += (dataa[i] - '0') * (datab[j] - '0');
-			}
-		}
-		//进位
-		for (int i = lengtha + lengthb - 1; i >= 0; i--)
-		{
-			if (pres[i] >= 10)//进位
-			{
-				pres[i - 1] += pres[i] / 10;//进位
-				pres[i] %= 10;//取出个位数
-			}
-
-		}
-		int i = 0;
-		while (pres[i] == 0)
-		{
-			i++;//恰好不为0的位置
-		}
-		char* lastres = (char*)malloc(sizeof(char) * (lengtha + lengthb));
-		int j;
-		for (j = 0; j < lengtha + lengthb; j++, i++)
-		{
-			lastres[j] = pres[i] + '0';
-		}
-		lastres[j] = '\0';
-		return lastres;
-		//printf("last结果=%s", lastres);
-	}
-
-
-
-
-
-};
-
-struct myclass :public  bigdatacom //继承
-{
-	void coutstr()//新增
-	{
-		std::cout << this->dataa << this->datab << std::endl;
-	}
-
-};
-
-
-void mainStruct()
-{
-	myclass  class1;
-	class1.init("12345", "1000");
-	std::cout << class1.getbigdata() << std::endl;
-	class1.coutstr();
-	system("pause");
-}
+////除了数据还有函数
+//struct bigdatacom
+//{
+//protected://内部私有
+//	char dataa[100];
+//	char datab[100];
+//public://公有公开
+//	void init(const char* str1, const char* str2)
+//	{
+//		std::cout << typeid(*this).name() << std::endl;;
+//
+//		//strcpy(this->dataa, str1);
+//		//strcpy(this->datab, str2);
+//	}
+//	char* getbigdata()
+//	{
+//		int lengtha = strlen(dataa);
+//		int lengthb = strlen(datab);
+//		int* pres = (int*)malloc(sizeof(int) * (lengtha + lengthb));
+//		memset(pres, 0, sizeof(int) * (lengtha + lengthb));//初始化
+//		//累乘
+//		for (int i = 0; i < lengtha; i++)
+//		{
+//			for (int j = 0; j < lengthb; j++)
+//			{
+//				pres[i + j + 1] += (dataa[i] - '0') * (datab[j] - '0');
+//			}
+//		}
+//		//进位
+//		for (int i = lengtha + lengthb - 1; i >= 0; i--)
+//		{
+//			if (pres[i] >= 10)//进位
+//			{
+//				pres[i - 1] += pres[i] / 10;//进位
+//				pres[i] %= 10;//取出个位数
+//			}
+//
+//		}
+//		int i = 0;
+//		while (pres[i] == 0)
+//		{
+//			i++;//恰好不为0的位置
+//		}
+//		char* lastres = (char*)malloc(sizeof(char) * (lengtha + lengthb));
+//		int j;
+//		for (j = 0; j < lengtha + lengthb; j++, i++)
+//		{
+//			lastres[j] = pres[i] + '0';
+//		}
+//		lastres[j] = '\0';
+//		return lastres;
+//		//printf("last结果=%s", lastres);
+//	}
+//
+//
+//
+//
+//
+//};
+//
+//struct myclass :public  bigdatacom //继承
+//{
+//	void coutstr()//新增
+//	{
+//		std::cout << this->dataa << this->datab << std::endl;
+//	}
+//
+//};
+//
+//
+//void mainStruct()
+//{
+//	myclass  class1;
+//	class1.init("12345", "1000");
+//	std::cout << class1.getbigdata() << std::endl;
+//	class1.coutstr();
+//	system("pause");
+//}
 
 #pragma endregion
 
@@ -298,8 +300,8 @@ public://公有公开
 	{
 		std::cout << typeid(*this).name() << std::endl;;
 
-		strcpy(this->dataa, str1);
-		strcpy(this->datab, str2);
+		//strcpy(this->dataa, str1);
+		//strcpy(this->datab, str2);
 	}
 	char* getbigdata()
 	{
@@ -560,6 +562,294 @@ void mainWchar()
 //}
 
 // std::move(a) ;    左值转换为右值
+#pragma endregion
+
+#pragma region new_array
+int newAaaryTest()
+{
+	double db[4] = { 1.1,3.3,5.5,7.7 };
+	std::array<double, 4> dbnew = { 12.3,4.2,42.2,4.5 };
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << db[i] << dbnew[i] << std::endl;
+	}
+	system("pause");
+
+	return 0;
+}
+#pragma endregion
+
+#pragma region cast
+
+//static_cast<需要转换的数据类型>(要转换的数据)80% static_cast
+
+
+
+void maincast3()
+{
+	//int n = static_cast<int>(78.98);
+	printf("\n%d", 98.87);
+	printf("\n%d", static_cast<int>(98.87));
+	printf("\n%f", 98);
+	printf("\n%f", static_cast<float>(98));
+
+	int* p = static_cast<int*> (malloc(100));
+	std::cin.get();
+}
+//const int num = 10,可以修改无法生效，编译的时候不读内存
+//const int *p指向变量限定权限，只读不可写，
+//const_cast去掉常量指针属性 %5
+
+void maincast4()
+{
+	int num[3] = { 1, 2, 3 };
+	const int* p = num;
+	std::cout << *p << *(p + 1) << *(p + 2) << std::endl;
+	//*p = 10;
+	//*(p + 1) = 20;
+	int* pnew = const_cast<int*>(p);
+	*pnew = 10;
+
+	std::cin.get();
+
+}
+//reinterpret_cast %1  专业转换指针，最安全
+void  maincast()
+{
+	//指针。强类型，类型决定了数据的解析方式，内存占多大
+	int num = 3;
+	char* p = reinterpret_cast<char*>(&num);
+	for (int i = 0; i < 4; i++)
+	{
+		printf("%c,%d,%p\n", *(p + i), *(p + i), p + i);
+	}
+	std::cin.get();
+}
+//dynamic_cast 类的指针之间的转换
+#pragma endregion
+
+#pragma region lambda
+
+//using  std::array;//静态数组，栈上，
+//using std::vector;//动态数组，堆上,
+//using std::string;
+//
+////使用C++风格数组不需要管理内存。
+////array注意不要栈溢出
+////array适用于任何类型
+//
+//
+//void main1()
+//{
+//	//
+//	array<int, 5> myint = { 1, 2, 3, 4, 5 };
+//	array<int, 1024 * 256> myint1;
+//	vector<double> myvector; //动态数组
+//	for (int i = 0; i < 1024 * 1024; i++)
+//	{
+//		myvector.push_back(i);//
+//	}
+//
+//	std::cin.get();
+//
+//
+//
+//}
+//
+//void main2()
+//{
+//	array<int, 5> myint1 = { 1, 2, 3, 4, 5 };
+//	array<int, 5> myint2 = { 11, 12, 13, 14, 15 };
+//	array<int, 5> myint3 = { 21, 22, 23, 24, 25 };
+//	//	array<array<int, 5>, 3> myint = {myint1,myint2,myint3};
+//	array<array<int, 5>, 3> myint = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+//	for (int i = 0; i < myint.size(); i++)//数组大小
+//	{
+//		for (int j = 0; j < myint1.size(); j++)
+//		{
+//			std::cout << "  " << myint[i][j];
+//		}
+//		std::cout << "\n";
+//	}
+//
+//	std::cin.get();
+//
+//
+//
+//
+//}
+//
+//void main3()
+//{
+//	vector <string>  string1;//动态字符串数组
+//	//可以反复利用
+//	string1.push_back("notepad");
+//	string1.push_back("calc");
+//	string1.push_back("mspaint");
+//	string1.pop_back();//删除一个
+//	//string1.clear();//清空
+//	for (int i = 0; i < string1.size(); i++)//遍历动态数组
+//	{
+//		//system(string1[i].c_str());
+//	}
+//
+//
+//
+//
+//
+//
+//
+//}
+//
+//void main5()
+//{
+//	vector <string>  string1;//动态字符串数组
+//	string1.push_back("notepad");
+//	string1.push_back("calc");
+//	string1.push_back("mspaint");
+//
+//	vector<string>::iterator ibegin, iend;//迭代器
+//	ibegin = string1.begin();//数据起始点
+//	iend = string1.end();//结束
+//
+//	for (; ibegin != iend; ibegin++)
+//	{
+//		string tempstr = *ibegin;//获取指针指向的数据
+//		system(tempstr.c_str());//执行指令
+//	}
+//
+//
+//
+//
+//
+//
+//}
+//
+//void  main6()
+//{
+//	array<int, 5> myint = { 1, 2, 3, 4, 5 };
+//	array<int, 5>::iterator ibegin, iend;//正向迭代器
+//	ibegin = myint.begin();
+//	iend = myint.end();
+//	while (ibegin != iend)
+//	{
+//		std::cout << *ibegin << std::endl;
+//		ibegin++;
+//	}
+//	array<int, 5>::reverse_iterator rbegin, rend;
+//	rbegin = myint.rbegin();
+//	rend = myint.rend();
+//	while (rbegin != rend)
+//	{
+//		std::cout << *rbegin << std::endl;
+//		rbegin++;
+//
+//	}
+//
+//	std::cin.get();
+//
+//
+//
+//
+//}
+//void main7()
+//{
+//	vector <string>  string1;//动态字符串数组
+//	string1.push_back("notepad");
+//	string1.push_back("calc");
+//	string1.push_back("mspaint");
+//	//反向迭代器
+//	vector<string>::reverse_iterator rbegin = string1.rbegin();
+//	vector<string>::reverse_iterator rend = string1.rend();
+//	//rend--;rend最后不指向数据，指向数据的结尾的下一个节点
+//A:	if (rbegin != rend)
+//{
+//	system((*rend).c_str());//执行指令
+//	//rbegin++;
+//	rend--;
+//	goto A;
+//}
+//
+//}
+
+
+
+
+//#include<iostream>
+//#include<vector>
+//#include<algorithm>//算法  	lambda表达式，不仅仅适用与array ,也适用于vector
+//
+//
+//void main1()
+//{
+//	std::vector<int> myvector;
+//	myvector.push_back(11);
+//	myvector.push_back(22);
+//	myvector.push_back(33);
+//	myvector.push_back(3);
+//	myvector.push_back(4);
+//	myvector.push_back(5);
+//	int res = 0;//结果
+//	//&res直接操作一个变量，res等价于返回值，x代表参数，每次充当迭代器指向的元素，大括号就是代码
+//	std::for_each(myvector.begin(), myvector.end(), [&res](int x) {res += x; });
+//	std::cout << res;
+//	std::cin.get();
+//}
+//
+//
+//void main()
+//{
+//	std::vector<int> myvector(5);//分配5个空间,默认初始化为0
+//
+//	myvector.push_back(1);//增
+//	myvector.push_back(11);
+//	myvector.push_back(111);
+//	myvector.push_back(1111);
+//	myvector.push_back(2);
+//	myvector.pop_back();//弹出一个元素，删除最后一个
+//	myvector.insert(myvector.begin() + 1, 999);//插入，
+//	myvector.erase(myvector.begin() + 5);//根据迭代器的位置
+//	//myvector.clear();//删除所有元素
+//	for (int i = 0; i < myvector.size(); i++)
+//	{
+//		if (1)
+//		{
+//			//查询，修改
+//		}
+//		std::cout << myvector.at(i) << std::endl;
+//	}
+//	system("pause");
+//}
+//
+//void main123123()
+//{
+//	//可以实现动态无规则数组管理
+//	std::vector<int> myvetor1;
+//	myvetor1.push_back(12);
+//	myvetor1.push_back(13);
+//	myvetor1.push_back(14);
+//
+//	std::vector<int> myvetor2;
+//	myvetor2.push_back(22);
+//
+//	std::vector<int> myvetor3;
+//	myvetor3.push_back(32);
+//	myvetor3.push_back(37);
+//
+//	std::vector<std::vector<int>> allvecor;
+//	allvecor.push_back(myvetor1);
+//	allvecor.push_back(myvetor2);
+//	allvecor.push_back(myvetor3);
+//	for (int i = 0; i < allvecor.size(); i++)
+//	{
+//		for (int j = 0; j < allvecor[i].size(); j++)
+//		{
+//			std::cout << "  " << allvecor[i][j];
+//		}
+//		std::cout << "\n";
+//	}
+//	std::cin.get();
+//}
 #pragma endregion
 
 

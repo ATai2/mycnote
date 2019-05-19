@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{409dfe71-dd52-488c-bd3e-bcf1726ae838}</ProjectGuid>
+    <ProjectGuid>{06c9f5a7-7b04-45f1-a630-bf3a57de7918}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ConfigurationType>Application</ConfigurationType>
@@ -45,8 +45,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cppnode\cppnode.vcxproj">
-      <Project>{38b9dd8d-851f-485d-9c93-91beafe2e8e6}</Project>
+    <ProjectReference Include="..\mycnote\mycnote.vcxproj">
+      <Project>{33faa57a-d3dc-4074-b781-34d2db76ec35}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +70,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>../cppnode/Debug/*.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
